@@ -137,6 +137,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="site/reference.html">
+    Reference
+  </a>
+</li>
+
   </ul>
 </nav></div>
       
@@ -163,6 +170,22 @@
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/vanvalenlab/deepcell-types" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
       
     </div>
     
@@ -225,6 +248,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="site/reference.html">
+    Reference
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -242,6 +272,22 @@
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/vanvalenlab/deepcell-types" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
         
       </div>
     
@@ -280,14 +326,91 @@
 <p>DeepCell Types is a novel approach to cell phenotyping for spatial proteomics
 that addresses the challenge of generalization across diverse datasets with
 varying marker panels.</p>
-<p>For details on running the containerized workflow, see the <a class="reference external" href="https://github.com/vanvalenlab/deepcell-types">source repo</a>.</p>
-<p>For access to models and datasets, see <a class="reference internal" href="site/API-key.html"><span class="doc">Model and Datasets</span></a>.</p>
+<p>For details on running the cell-type inference workflow, see the <a class="reference internal" href="site/tutorial.html"><span class="doc">Tutorial</span></a>.</p>
+<p>The source code can be found at the <a class="reference external" href="https://github.com/vanvalenlab/deepcell-types">github repo</a>.</p>
+<p>For access to pre-trained models and datasets, see <a class="reference internal" href="site/API-key.html"><span class="doc">Model and Datasets</span></a>.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <p>The development version of <code class="docutils literal notranslate"><span class="pre">deepcell-types</span></code> can be installed with <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/vanvalenlab/deepcell-types@master
 </pre></div>
 </div>
+</section>
+<section id="pre-trained-models">
+<h2>Pre-trained models<a class="headerlink" href="#pre-trained-models" title="Link to this heading">#</a></h2>
+<p>A pre-trained model is required to run the cell-type inference pipeline.
+Pre-trained models are available via the <a class="reference external" href="https://vanvalenlab.github.io/deepcell-types/site/API-key.html#">users.deepcell.org</a> portal
+according to the <a class="reference external" href="https://github.com/vanvalenlab/deepcell-types/blob/master/LICENSE">license terms</a>.
+See <a class="reference internal" href="site/API-key.html"><span class="doc">Model and Datasets</span></a> for details.</p>
+<p>The latest version can be downloaded like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">deepcell_types.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">download_model</span>
+
+<span class="n">download_model</span><span class="p">()</span>  <span class="c1"># No argument == latest released version</span>
+</pre></div>
+</div>
+</section>
+<section id="running">
+<h2>Running<a class="headerlink" href="#running" title="Link to this heading">#</a></h2>
+<p>The <a class="reference internal" href="site/tutorial.html"><span class="doc">Tutorial</span></a> demonstrates how to set up, run, and visualize the
+outputs of the cell-type inference pipeline.</p>
+<p>This tutorial can also be run locally with <code class="docutils literal notranslate"><span class="pre">jupyter</span></code>.</p>
+<p>Start by cloning the sorce repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vanvalenlab/deepcell-types.git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>deepcell-types
+</pre></div>
+</div>
+<p>Ensure that all necessary extra dependencies are installed in your virtual
+environment (along with <code class="docutils literal notranslate"><span class="pre">deepcell-types</span></code> itself):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>docs/requirements.txt<span class="w"> </span>.
+</pre></div>
+</div>
+<p>Launch a jupyter lab instance:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+<p>Then open the tutorial at <code class="docutils literal notranslate"><span class="pre">docs/site/tutorial.md</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Depending on your <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code> version, you may need to right-click the tutorial.md
+and select <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">with</span> <span class="pre">-&gt;</span> <span class="pre">Jupytext</span> <span class="pre">notebook</span></code>.</p>
+</div>
+</section>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Maximum channel limit</strong></p>
+<p>The model currently supports a maximum of <strong>75</strong> channels per dataset. If you
+have a dataset with more than 75 marker channels, it will be necessary to
+remove channels to get below this limit. Note that (by default) nuclear and
+non-recognized channel names are automatically dropped.</p>
+</li>
+<li><p><strong>Recognized channels</strong></p>
+<p>The model maintains a registry of natively-supported channels at
+<a class="reference external" href="https://github.com/vanvalenlab/deepcell-types/blob/master/deepcell_types/dct_kit/config/master_channels.yaml"><code class="docutils literal notranslate"><span class="pre">deepcell_types/dct_kit/config/master_channels.yaml</span></code></a>.
+If your data contains markers not found in this listing, they will be
+ignored at inference time.
+There are two ways to add support for additional channels:</p>
+<ul>
+<li><p>To add a new alias for a marker name that is currently supported, add the
+alias to <code class="docutils literal notranslate"><span class="pre">deepcell_types/dct_kit/config/channel_mapping.yaml</span></code>. For example,
+if your data contains a channel named <code class="docutils literal notranslate"><span class="pre">FP3</span></code> representing the <code class="docutils literal notranslate"><span class="pre">FoxP3</span></code> marker,
+add the following line to <code class="docutils literal notranslate"><span class="pre">channel_mapping.yaml</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>FP3: FoxP3
+</pre></div>
+</div>
+<p>Note that the target name (<code class="docutils literal notranslate"><span class="pre">FoxP3</span></code> in this example) must be one of the
+names already found in <code class="docutils literal notranslate"><span class="pre">master_channels.yaml</span></code></p>
+</li>
+<li><p>Adding new markers to the model can be achieved by manually acquiring
+embeddings for additional channels via DeepSeek (model and prompt details
+can be found in the paper).</p></li>
+</ul>
+</li>
+<li><p><strong>Image preprocessing</strong></p>
+<p>The model requires users to preprocess input images to align with the
+distribution of our training data for optimal performance and generalization.
+See the paper for details.</p>
+</li>
+</ol>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -332,6 +455,9 @@ varying marker panels.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-trained-models">Pre-trained models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running">Running</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
 </ul>
   </nav></div>
 
@@ -369,7 +495,7 @@ varying marker panels.</p>
 
   <p class="copyright">
     
-      © Copyright 2024, Van Valen Lab at the California Institute of Technology (Caltech).
+      © Copyright 2025, Van Valen Lab at the California Institute of Technology (Caltech).
       <br/>
     
   </p>
