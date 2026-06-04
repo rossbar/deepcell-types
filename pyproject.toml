@@ -34,7 +34,6 @@ license = {file = "LICENSE"}
 packages = [
     'deepcell_types',
     'deepcell_types.dct_kit',
-    'deepcell_types.utils'
 ]
 include-package-data = true
 
