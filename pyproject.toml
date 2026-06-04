@@ -12,12 +12,12 @@ description = "A generalized cell phenotyping model for spatial proteomics"
 readme = "README.md"
 requires-python = "~=3.10"
 dependencies = [
-    "requests",
-    "pyyaml",
     "numpy",
     "scikit-image",
     "tqdm",
     "torch",
+    # Model access
+    'deepcell_auth@git+https://github.com/vanvalenlab/deepcell-auth.git',
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
