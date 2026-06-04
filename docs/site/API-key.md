@@ -28,15 +28,15 @@ Models
 The model can be downloaded for local use:
 
 ```python
->>> from deepcell_types.utils import download_model
+>>> from deepcell_auth import download_deepcell_types_model
 
->>> download_model()
+>>> download_deepcell_types_model()
 ```
 
 A `version` can be specified to access a specific pre-trained model, e.g.
 
 ```python
-download_model(version="2025-06-09_public-data-only")
+download_deepcell_types_model(version="2025-06-09_public-data-only")
 ```
 
 A listing of available pre-trained models is available at
@@ -53,8 +53,8 @@ network bandwidth before attempting to download.
 Similarly, training data can be downloaded for local use with:
 
 ```python
->>> from utils import download_training_data
+>>> from deepcell_auth import download_deepcell_types_data
 
 
->>> download_training_data()
+>>> download_deepcell_types_data()
 ```

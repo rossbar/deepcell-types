@@ -29,9 +29,9 @@ See {doc}`site/API-key` for details.
 The latest version can be downloaded like so:
 
 ```python
-from deepcell_types.utils import download_model
+from deepcell_auth import download_deepcell_types_model
 
-download_model()  # No argument == latest released version
+download_deepcell_types_model()  # No argument == latest released version
 ```
 
 ## Running

@@ -278,7 +278,7 @@ import deepcell_types
 ```
 
 To run the inference pipeline, you will need to download a trained model.
-See {ref}`download_models` for details.
+See {doc}`site/API-key` for details.
 
 ```{code-cell} ipython3
 # Model & system-specific configuration

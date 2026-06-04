@@ -5,8 +5,8 @@ DeepCell Types is a novel approach to cell phenotyping for spatial proteomics th
 
 ## Download the model
 ```python
-from deepcell_types.utils import download_model
-download_model()
+from deepcell_auth import download_deepcell_types_model
+download_deepcell_types_model()
 ```
 
 ## Installation
